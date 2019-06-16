@@ -171,7 +171,9 @@ export default {
       inputValue: ''
     }
   },
-
+  created() {
+    this.inputValue = this.value
+  },
   mounted() {
     this.$_ro = new ResizeObserver(e => {
       this.resizeList(this.$refs.input)
