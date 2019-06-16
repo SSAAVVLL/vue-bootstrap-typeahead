@@ -177,7 +177,7 @@ export default {
   created() {
     this.updateValue()
   },
-  watch() {
+  watch: {
 	value() {
 	  this.updateValue()
 	}
