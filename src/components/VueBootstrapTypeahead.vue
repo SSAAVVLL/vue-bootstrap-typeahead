@@ -135,6 +135,9 @@ export default {
         listStyle.marginLeft = prependRect.width + 'px'
       }
     },
+	updateValue() {
+	  this.inputValue = this.value
+	},
 
     handleHit(evt) {
       if (typeof this.value !== 'undefined') {
@@ -172,7 +175,12 @@ export default {
     }
   },
   created() {
-    this.inputValue = this.value
+    this.updateValue()
+  },
+  watch() {
+	value() {
+	  this.updateValue()
+	}
   },
   mounted() {
     this.$_ro = new ResizeObserver(e => {
