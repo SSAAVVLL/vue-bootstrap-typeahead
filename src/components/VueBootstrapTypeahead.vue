@@ -9,6 +9,7 @@
       <input
         ref="input"
         type="search"
+		:disabled="disabled"
         :class="`form-control ${inputClass}`"
         :placeholder="placeholder"
         :aria-label="placeholder"
@@ -60,6 +61,9 @@ export default {
   },
 
   props: {
+	disabled: {
+	  type: Boolean
+	},
     size: {
       type: String,
       default: null,
